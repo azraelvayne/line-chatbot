@@ -18,14 +18,14 @@ def callback():
     app.logger.info("Request body: " + body)
 
     if not body:
-        abort(400)
+        abort(200)
 
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
-        abort(400)
+        abort(200)
 
-    return 'OK'
+    return 'OK',200
 
 
 @handler.add(MessageEvent, message=TextMessage)
