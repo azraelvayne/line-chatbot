@@ -11,6 +11,10 @@ handler = WebhookHandler(os.environ['1268eb4f16e5d543a622a4c4341abbd6'])
 
 openai.api_key = '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'
 
+ALLOWED_HOSTS = [
+    'ngrok-free.app'  # 允許的網域名稱
+]
+
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
