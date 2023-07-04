@@ -9,7 +9,10 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ['LEPQ+PdKPSLcoS9GBbdFukdoHl+KigQAE1/6atOcvQn97Own17jB19NydaKRrEuMNR0c0P2h9jFk7IVWb3DQs/cEJGvVFGF6Ki/v+Nw8+QWGTYpeEkk9v7Yb6/OCR0OS7RmAlJWhRW42/a6 kmbQiMgdB04t89/1O/w1cDnyilFU='])
 handler = WebhookHandler(os.environ['1268eb4f16e5d543a622a4c4341abbd6'])
 
+import openai
+
 openai.api_key = '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'
+
 
 ALLOWED_HOSTS = [
     'ngrok-free.app'  # 允許的網域名稱
