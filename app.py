@@ -14,10 +14,6 @@ import openai
 openai.api_key = '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'
 
 
-ALLOWED_HOSTS = [
-    'ngrok-free.app'  # 允許的網域名稱
-]
-
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -43,7 +39,7 @@ def handle_message(event):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "Hi."},
             {"role": "user", "content": user_message}
         ]
     )
